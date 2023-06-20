@@ -14,6 +14,10 @@ class Food(Turtle):
         self.color("yellow")
         self.speed("fastest")
 
+        self.moveSomeplace()
+
+    def moveSomeplace(self):
+        '''Go to a random location'''
         random_x = random.randint(LOWER_BOUND, UPPER_BOUND)
         random_y = random.randint(LOWER_BOUND, UPPER_BOUND)
-        self.goto((random_x,random_y))
+        self.goto((random_x, random_y))

@@ -13,7 +13,6 @@ class Snake:
         self.create_snake()
         self.head = self.segments[0]
 
-
     def create_snake(self):
         # set the start position of each of the snake body parts
         for position in START_COORDINATES:
