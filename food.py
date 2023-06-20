@@ -1,8 +1,8 @@
 from turtle import Turtle
 import random
 
-LOWER_BOUND = -280
-UPPER_BOUND = 280
+LOWER_BOUND = -240
+UPPER_BOUND = 240
 
 
 class Food(Turtle):

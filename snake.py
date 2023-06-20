@@ -16,11 +16,7 @@ class Snake:
     def create_snake(self):
         # set the start position of each of the snake body parts
         for position in START_COORDINATES:
-            part = Turtle(shape="square")
-            part.color("white")
-            part.penup()
-            part.goto(position)
-            self.segments.append(part)
+            self.add_segment(position)
 
 
     # This is the core snake motion algorithm
@@ -34,6 +30,19 @@ class Snake:
             self.segments[seg_num].goto(new_x, new_y)
         # Now move the first body part someplace
         self.head.forward(MOVE_DISTANCE)
+
+    def add_segment(self, position):
+        part = Turtle(shape="square")
+        part.color("white")
+        part.penup()
+        part.goto(position)
+        self.segments.append(part)
+    def extend(self):
+        lastpos = self.segments[len(self.segments)-1]
+        new_x = lastpos.xcor()
+        new_y = lastpos.ycor()
+        self.add_segment((new_x,new_y))
+
     def up(self):
         if (self.head.heading() != DOWN):
             # we do not want the snake to reverse direction
